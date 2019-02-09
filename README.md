@@ -1,2 +1,1 @@
-# hackerrank-problems
-Chronicles of my Hackerrank Solutions
+## Chronicles of my solutions to programming challenges
