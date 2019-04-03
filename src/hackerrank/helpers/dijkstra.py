@@ -87,4 +87,5 @@ def dijkstra(ref_node):
     dijkstra(ref_node)
 
 
-cProfile.run('dijkstra(node0)')
+if __name__ == "__main__":
+    cProfile.run('dijkstra(node0)')
