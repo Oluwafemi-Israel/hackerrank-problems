@@ -19,16 +19,16 @@ def reduce_exponent(exponent):
     exponent_in_binary = binary(exponent)
     num_of_digits = len(exponent_in_binary)
 
-    reduced_exponents = []
+    reduced_exponent = []
 
     for i in range(num_of_digits):
         if exponent_in_binary[num_of_digits - i - 1] == "1":
-            reduced_exponents.append(2 ** i)
+            reduced_exponent.append(2 ** i)
 
-    return reduced_exponents
+    return reduced_exponent
 
 
-def populate_memory(base, greatest_exponent):
+def generate_powers_of_2(base, greatest_exponent):
     memory = {1: base}
     current_exponent = 2
     while current_exponent <= greatest_exponent:
@@ -46,7 +46,7 @@ def power(base, exponent):
 
     reduced_exponent = reduce_exponent(exponent)
 
-    memory = populate_memory(base, reduced_exponent[-1])
+    memory = generate_powers_of_2(base, reduced_exponent[-1])
 
     result = 1
     for exponent in reduced_exponent:
@@ -56,4 +56,4 @@ def power(base, exponent):
 
 
 if __name__ == "__main__":
-    print(power(5, 0))
+    print(power(23, 123456))
