@@ -3,6 +3,9 @@
 #
 # Do this faster than the naive method of repeated multiplication.
 
+# Extremely good resource to help solve this
+# https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/fast-modular-exponentiation
+
 
 def binary(num):
     result = ""
