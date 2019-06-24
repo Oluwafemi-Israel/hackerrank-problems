@@ -21,18 +21,18 @@ def change_adjacent_lands_to_water(matrix, row, col):
     matrix[row][col] = 0
 
     # previous row
-    change_adjacent_lands_to_water(matrix, row - 1, col - 1)
-    change_adjacent_lands_to_water(matrix, row - 1, col)
-    change_adjacent_lands_to_water(matrix, row - 1, col + 1)
+    change_adjacent_lands_to_water(matrix, row - 1, col - 1)  # north-west
+    change_adjacent_lands_to_water(matrix, row - 1, col)  # north
+    change_adjacent_lands_to_water(matrix, row - 1, col + 1)  # north-east
 
     # current row
-    change_adjacent_lands_to_water(matrix, row, col - 1)
-    change_adjacent_lands_to_water(matrix, row, col + 1)
+    change_adjacent_lands_to_water(matrix, row, col - 1)  # west
+    change_adjacent_lands_to_water(matrix, row, col + 1)  # east
 
     # next row
-    change_adjacent_lands_to_water(matrix, row + 1, col - 1)
-    change_adjacent_lands_to_water(matrix, row + 1, col)
-    change_adjacent_lands_to_water(matrix, row + 1, col + 1)
+    change_adjacent_lands_to_water(matrix, row + 1, col - 1)  # south-west
+    change_adjacent_lands_to_water(matrix, row + 1, col)  # south
+    change_adjacent_lands_to_water(matrix, row + 1, col + 1)  # south-east
 
 
 def num_of_islands(matrix):
@@ -43,19 +43,19 @@ def num_of_islands(matrix):
             if matrix[row][col] == 1:
                 # increment the island count
                 islands += 1
-                # recursively change all adjacent lands to this land to water
+                # recursively change adjacent lands to water
                 change_adjacent_lands_to_water(matrix, row, col)
     return islands
 
 
 if __name__ == "__main__":
-    assert(
-        num_of_islands([
-            [1, 0, 0, 0, 0],
-            [0, 0, 1, 1, 0],
-            [0, 1, 1, 0, 0],
-            [0, 0, 0, 0, 0],
-            [1, 1, 0, 0, 1],
-            [1, 1, 0, 0, 1]
-        ]) == 4
+    assert (
+            num_of_islands([
+                [1, 0, 0, 0, 0],
+                [0, 0, 1, 1, 0],
+                [0, 1, 1, 0, 0],
+                [0, 0, 0, 0, 0],
+                [1, 1, 0, 0, 1],
+                [1, 1, 0, 0, 1]
+            ]) == 4
     )
