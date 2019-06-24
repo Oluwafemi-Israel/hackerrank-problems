@@ -12,9 +12,12 @@
 
 # https://www.youtube.com/watch?v=CLvNe-8-6s8
 
+
 def change_adjacent_lands_to_water(matrix, row, col):
     if row < 0 or row >= len(matrix) or col < 0 or col >= len(matrix[row]) or matrix[row][col] == 0:
         return
+
+    # change land to water
     matrix[row][col] = 0
 
     # previous row
@@ -36,8 +39,11 @@ def num_of_islands(matrix):
     islands = 0
     for row in range(len(matrix)):
         for col in range(len(matrix[row])):
+            # when we find some land
             if matrix[row][col] == 1:
+                # increment the island count
                 islands += 1
+                # recursively change all adjacent lands to this land to water
                 change_adjacent_lands_to_water(matrix, row, col)
     return islands
 
