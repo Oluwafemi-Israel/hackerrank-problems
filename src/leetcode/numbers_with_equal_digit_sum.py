@@ -30,6 +30,6 @@ def solution(arr):
 
 
 if __name__ == "__main__":
-    assert solution([51, 71, 17, 42]), 93
-    assert solution([42, 33, 60]), 102
-    assert solution([51, 32, 43]), -1
+    assert solution([51, 71, 17, 42]) == 93
+    assert solution([42, 33, 60]) == 102
+    assert solution([51, 32, 43]) == -1
