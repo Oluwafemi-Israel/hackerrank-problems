@@ -1,3 +1,8 @@
+"""
+https://leetcode.com/discuss/interview-question/351783/
+"""
+
+
 def is_palindrome_permutation(s):
     s = s.lower()
     bit_vector = 0 << 25
@@ -39,6 +44,7 @@ def min_adjacent_swaps(s):
         return total_swaps
     else:
         return -1
+
 
 # #####################################################################
 # ALTERNATIVE APPROACH
@@ -84,4 +90,3 @@ if __name__ == "__main__":
     assert min_adjacent_swaps("aabb") == 2
     assert min_adjacent_swaps("ntiiiin") == 2
     assert min_adjacent_swaps("mallam") == 0
-
