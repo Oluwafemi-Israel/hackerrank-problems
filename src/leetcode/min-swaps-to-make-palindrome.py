@@ -1,8 +1,9 @@
 def is_palindrome_permutation(s):
+    s = s.lower()
     bit_vector = 0 << 25
 
     for char in s:
-        index = ord(char.lower()) - 97
+        index = ord(char) - 97
         bit_vector = (1 << index) ^ bit_vector
 
     return (bit_vector - 1) & bit_vector == 0
